@@ -14,9 +14,6 @@ export class PlaysList {
 
   @Prop({ required: true })
   seasoneName: string
-
-  @Prop({ required: true })
-  dateAndTimeOfPlay: Date
 }
 
 export const PlaysListSchema = SchemaFactory.createForClass(PlaysList)

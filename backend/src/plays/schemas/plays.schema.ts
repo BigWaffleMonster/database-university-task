@@ -13,6 +13,9 @@ export class Plays {
 
   @Prop({ required: true })
   generRating: number
+
+  @Prop({ required: true })
+  dateAndTimeOfPlay: Date
 }
 
 export const PlaysSchema = SchemaFactory.createForClass(Plays)
