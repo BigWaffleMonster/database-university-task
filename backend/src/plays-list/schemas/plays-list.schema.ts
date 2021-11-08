@@ -6,14 +6,14 @@ export type PlaysListDocument = PlaysList & Document
 
 @Schema()
 export class PlaysList {
-  @Prop({ required: true })
-  seasoneCode: number
-
   @Prop({ type: [{ type: MongooseSchema.Types.ObjectId, ref: 'Plays' }] })
   listOfPlays: Plays[]
 
   @Prop({ required: true })
   seasoneName: string
+
+  @Prop({ required: true })
+  year: number
 }
 
 export const PlaysListSchema = SchemaFactory.createForClass(PlaysList)

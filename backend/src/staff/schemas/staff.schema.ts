@@ -5,7 +5,7 @@ export type StaffDocument = Staff & Document
 
 @Schema()
 export class Staff {
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true})
   passportID: number
 
   @Prop({ required: true })

@@ -10,9 +10,6 @@ export class Theater {
   location: TheaterLocation
 
   @Prop({ required: true })
-  theaterCode: number
-
-  @Prop({ required: true })
   theaterName: string
 
   @Prop({ required: true })

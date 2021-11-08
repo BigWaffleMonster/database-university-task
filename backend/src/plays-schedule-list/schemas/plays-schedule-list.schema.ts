@@ -6,11 +6,8 @@ export type PlaysScheduleListDocument = PlaysScheduleList & Document
 
 @Schema()
 export class PlaysScheduleList {
-  @Prop({ required: true })
-  playsScheduleListCode: number
-
   @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'PlaysList' })
-  listOfPlays: PlaysList
+  playsListRef: PlaysList
 
   @Prop({ required: true })
   playsScheduleListName: string

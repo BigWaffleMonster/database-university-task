@@ -8,16 +8,19 @@ export type TicketWindowDocument = TicketWindow & Document
 @Schema()
 export class TicketWindow {
   @Prop({ required: true })
-  ticketWindowCode: number
-
-  @Prop({ required: true })
   ticketWindowNumber: number
 
-  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Staff' })
-  cashierID: Staff
+  @Prop({required: true, default: 100})
+  tickets: number
+
+  @Prop({ type: [{ type: MongooseSchema.Types.ObjectId, ref: 'Staff' }] })
+  cashierID: Staff[]
 
   @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'PlaysScheduleList' })
   playsScheduleListCodeRef: PlaysScheduleList
+
+  @Prop({ required: true, default: true })
+  isOpen: boolean
 }
 
 export const TicketWindowSchema = SchemaFactory.createForClass(TicketWindow)
