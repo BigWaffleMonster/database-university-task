@@ -1,0 +1,24 @@
+.container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.menu {
+  display: flex;
+  height: 50vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn {
+  font-size: large;
+  height: 50px;
+  width: 150px;
+  border: 1px solid #000;
+  border-radius: 50px 50px 50px 50px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+  background: #000;
+}

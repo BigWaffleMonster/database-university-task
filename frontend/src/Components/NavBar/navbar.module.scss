@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background: rgb(192, 84, 84);
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.navlink {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease 0s;
+}
+
+.navlink:hover {
+  color: aliceblue;
+}
