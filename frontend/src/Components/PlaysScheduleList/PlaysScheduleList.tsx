@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import styles from './playsScheduleList.module.scss'
-import {propsTypes} from '../types'
-import {setDateTimeToNormalView} from '../../../helperFunctions/setDateTimeToNormalView'
+import {propsTypes} from '../CustomerPage/types'
+import {setDateTimeToNormalView} from '../../helperFunctions/setDateTimeToNormalView'
 
 const PlaysScheduleList: FC<propsTypes> = (props) => {
   return (

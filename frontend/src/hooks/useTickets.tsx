@@ -39,5 +39,22 @@ export const useTickets = () => {
     }
   }
 
-  return {buyTicket, ticket, getTicket}
+  const addTicket = async (id: string, tickets: number) => {
+    try {
+      const response = await fetch(`http://localhost:5000/ticket-window/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({tickets}),
+        headers: {'Content-Type': 'application/json'}
+      })
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong')
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  return {buyTicket, ticket, getTicket, addTicket}
 }

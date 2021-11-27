@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import PlaysScheduleList from './PlaysScheduleList'
+import PlaysScheduleList from '../PlaysScheduleList'
 import styles from './customerPage.module.scss'
 import {useSchedule} from '../../hooks/useSchedule'
 import {playType} from '../../types/playType'
@@ -15,7 +15,6 @@ const CustomerPage = () => {
   useEffect(() => {
     const handleReq = async () => {
       await getPlays('6179295d203312e09fc754a2')
-      await getTicket('6179295d203312e09fc754a2')
       await getCashierInfo('6179295d203312e09fc754a2')
       setPlays(playsArr)
     }
