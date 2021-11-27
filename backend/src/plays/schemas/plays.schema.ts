@@ -9,10 +9,10 @@ export class Plays {
   playName: string
 
   @Prop({ required: true })
-  gener: string
+  genre: string
 
   @Prop({ required: true })
-  generRating: number
+  genreRating: number
 
   @Prop({ required: true })
   dateAndTimeOfPlay: Date

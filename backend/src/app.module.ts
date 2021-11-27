@@ -2,9 +2,7 @@ import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { TheaterLocationController } from './theater-location/theater-location.controller'
 import { TheaterLocationModule } from './theater-location/theater-location.module'
-import { TheaterController } from './theater/theater.controller'
 import { TheaterModule } from './theater/theater.module'
 import { StaffModule } from './staff/staff.module'
 import { PlaysModule } from './plays/plays.module'
@@ -14,7 +12,8 @@ import { TicketWindowModule } from './ticket-window/ticket-window.module'
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/theaterTicketOffice'),
+    // MongooseModule.forRoot('mongodb+srv://waffle:1q2w3e4r@cluster0.l596u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb://localhost/theaterTicketOffice', ),
     TheaterLocationModule,
     TheaterModule,
     StaffModule,
@@ -24,6 +23,6 @@ import { TicketWindowModule } from './ticket-window/ticket-window.module'
     TicketWindowModule
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [AppService],
 })
 export class AppModule {}

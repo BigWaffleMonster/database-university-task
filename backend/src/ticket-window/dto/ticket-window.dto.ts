@@ -3,6 +3,7 @@ import { Staff } from 'src/staff/schemas/staff.schema'
 
 export class TicketWindowDto {
   readonly ticketWindowNumber: number
+  readonly tickets: number
   readonly cashierID: Staff
   readonly playsScheduleListCodeRef: PlaysScheduleList
   readonly isOpen: boolean

@@ -6,6 +6,7 @@ import {
   TicketWindow,
   TicketWindowDocument
 } from './schemas/ticket-window.schema'
+import {UpdateTicketsDto} from './dto/update-tickets.dto'
 
 @Injectable()
 export class TicketWindowService {
@@ -29,5 +30,9 @@ export class TicketWindowService {
 
   async remove(id: string) {}
 
-  async update(id: string) {}
+  async update(id: string, updateTicketsDto: UpdateTicketsDto) {
+    const response = await this.ticketWindowModel.findByIdAndUpdate(id, updateTicketsDto)
+
+    return response
+  }
 }
