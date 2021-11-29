@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   HttpStatus,
@@ -29,5 +30,11 @@ export class PlaysController {
   @HttpCode(HttpStatus.CREATED)
   create(@Body() playsDto: PlaysDto): Promise<Plays> {
     return this.playsService.create(playsDto)
+  }
+
+  @Delete(':id')
+  @HttpCode(200)
+  remove(@Param('id') id: string) {
+    return this.playsService.remove(id)
   }
 }

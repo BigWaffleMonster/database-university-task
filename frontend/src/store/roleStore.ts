@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx'
 import { Roles } from '../types/roles'
 
 class RoleStore {
-  role: Roles = Roles.CASHIER
+  role: Roles = Roles.ADMIN
 
   constructor() {
     makeAutoObservable(this)

@@ -23,7 +23,11 @@ export class PlaysService {
     return newPlay.save()
   }
 
-  async remove(id: string) {}
+  async remove(id: string) {
+    const response = await this.playsModel.findByIdAndDelete({ _id: id })
+
+    return response
+  }
 
   async update(id: string) {}
 }

@@ -3,6 +3,7 @@ import ChooseRole from '../Components/ChooseRole'
 import { Roles } from '../types/roles'
 import CustomerPage from '../Components/CustomerPage'
 import CashierPage from '../Components/CashierPage'
+import AdminPage from '../Components/AdminPage'
 
 export const useRoutes = (role?: Roles) => {
   if (role === Roles.CUSTOMER) {
@@ -26,7 +27,7 @@ export const useRoutes = (role?: Roles) => {
   } else if (role === Roles.ADMIN) {
     return (
       <Routes>
-        <Route path='/admin' element={<h1>Admin</h1>} />
+        <Route path='/admin' element={<AdminPage />} />
         <Route path='/choose_role' element={<ChooseRole />} />
         <Route path='/' element={<Navigate to='/admin' />} />
         <Route path='*' element={<h1>404</h1>} />
