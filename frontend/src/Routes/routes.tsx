@@ -4,6 +4,8 @@ import { Roles } from '../types/roles'
 import CustomerPage from '../Components/CustomerPage'
 import CashierPage from '../Components/CashierPage'
 import AdminPage from '../Components/AdminPage'
+import PlaysPage from '../Components/PlaysPage'
+import UpdatePlayPage from '../Components/UpdatePlayPage/UpdatePlayPage'
 
 export const useRoutes = (role?: Roles) => {
   if (role === Roles.CUSTOMER) {
@@ -29,6 +31,8 @@ export const useRoutes = (role?: Roles) => {
       <Routes>
         <Route path='/admin' element={<AdminPage />} />
         <Route path='/choose_role' element={<ChooseRole />} />
+        <Route path='/plays' element={<PlaysPage />} />
+        <Route path='/plays/:id' element={<UpdatePlayPage />} />
         <Route path='/' element={<Navigate to='/admin' />} />
         <Route path='*' element={<h1>404</h1>} />
       </Routes>

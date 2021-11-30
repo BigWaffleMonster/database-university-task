@@ -21,7 +21,7 @@ const PlaysScheduleList: FC<propsTypes> = (props) => {
           <h4>Genre</h4>
         </div>
         <div className={styles.item}>
-          <h4>Update/Delete</h4>
+          <h4>Delete</h4>
         </div>
         {props.plays.map((pl: any) => {
           return (
@@ -36,7 +36,6 @@ const PlaysScheduleList: FC<propsTypes> = (props) => {
                 {pl.genre}
               </div>
               <div className={styles.item} key={pl._id + 3}>
-                <button>Update</button>
                 <button onClick={() => removePlayByAdmin(pl._id)}>
                   Delete
                 </button>

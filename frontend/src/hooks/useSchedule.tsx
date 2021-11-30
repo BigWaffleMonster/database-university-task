@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { cashierType } from '../types/cashierType'
 
 export const useSchedule = () => {
-  const playsArr: playType[] = []
+  const [playsArr, setPlaysArr] = useState<playType[]>([])
   const [cashier, setCashier] = useState<cashierType>({ name: '', surname: '' })
 
   const getPlays = async (id: string) => {
@@ -24,7 +24,9 @@ export const useSchedule = () => {
       for (let playID of data.listOfPlays) {
         response = await fetch(`http://localhost:5000/plays/${playID}`)
         data = await response.json()
-        playsArr.push(data)
+        setPlaysArr(prevState => {
+          return [...prevState, data]
+        })
       }
     } catch (e) {
       console.log(e)
@@ -47,10 +49,9 @@ export const useSchedule = () => {
 
   const removePlayByAdmin = async (id: string) => {
     try {
-      let response = await fetch(`http://localhost:5000/plays/${id}`)
-      // let response2 = await fetch('')
-      let data = await response.json()
-      console.log(data)
+      await fetch(`http://localhost:5000/plays/${id}`, {
+        method: 'DELETE'
+      })
     } catch (e) {
       console.log(e)
     }

@@ -6,11 +6,12 @@ import {
   HttpCode,
   HttpStatus,
   Param,
-  Post
+  Post, Put
 } from '@nestjs/common'
 import { PlaysDto } from './dto/plays.dto'
 import { PlaysService } from './plays.service'
 import { Plays } from './schemas/plays.schema'
+import {UpdateTicketsDto} from '../ticket-window/dto/update-tickets.dto'
 
 @Controller('plays')
 export class PlaysController {
@@ -36,5 +37,11 @@ export class PlaysController {
   @HttpCode(200)
   remove(@Param('id') id: string) {
     return this.playsService.remove(id)
+  }
+
+  @Put(':id')
+  @HttpCode(200)
+  update(@Param('id') id: string, @Body() playsDto: PlaysDto) {
+    return this.playsService.update(id, playsDto)
   }
 }

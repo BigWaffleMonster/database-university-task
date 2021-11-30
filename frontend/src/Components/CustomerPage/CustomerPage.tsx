@@ -2,21 +2,19 @@ import React, {useEffect, useState} from 'react'
 import PlaysScheduleList from '../PlaysScheduleList'
 import styles from './customerPage.module.scss'
 import {useSchedule} from '../../hooks/useSchedule'
-import {playType} from '../../types/playType'
+
 import {useTickets} from '../../hooks/useTickets'
 
 const CustomerPage = () => {
   const {getPlays, playsArr, getCashierInfo, cashier} = useSchedule()
   const {buyTicket, getTicket, ticket} = useTickets()
 
-  const [plays, setPlays] = useState<playType[]>([])
   const [amountTicketsToBuy, setAmountTicketsToBuy] = useState<number>(0)
 
   useEffect(() => {
     const handleReq = async () => {
       await getPlays('6179295d203312e09fc754a2')
       await getCashierInfo('6179295d203312e09fc754a2')
-      setPlays(playsArr)
     }
     handleReq()
   }, [])
@@ -36,7 +34,7 @@ const CustomerPage = () => {
     <div className={styles.container}>
       <h1>Cashier: {cashier.name} {cashier.surname}</h1>
 
-      <PlaysScheduleList plays={plays}/>
+      <PlaysScheduleList plays={playsArr}/>
 
       <h1>{`Tickets: ${ticket}`}</h1>
 

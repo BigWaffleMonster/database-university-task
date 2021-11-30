@@ -1,0 +1,36 @@
+.container {
+  margin-top: 20px;
+  box-sizing: border-box;
+  width: 700px;
+  border: 1px solid #000;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.gridContainer {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(25px, auto);
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.item {
+  padding: 5px;
+  text-align: center;
+}
+
+.addContainer {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addContainer input {
+  margin: 10px;
+}

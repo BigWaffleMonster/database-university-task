@@ -1,6 +1,6 @@
 export class PlaysDto {
   readonly playName: string
-  readonly gener: string
-  readonly generRating: number
+  readonly genre: string
   readonly dateAndTimeOfPlay: Date
+  readonly genreRating: number
 }

@@ -29,5 +29,9 @@ export class PlaysService {
     return response
   }
 
-  async update(id: string) {}
+  async update(id: string, playsDto: PlaysDto) {
+    const response = await this.playsModel.findByIdAndUpdate(id, playsDto)
+
+    return response
+  }
 }

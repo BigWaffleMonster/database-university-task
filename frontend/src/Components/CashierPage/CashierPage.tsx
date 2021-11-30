@@ -3,19 +3,16 @@ import styles from './cashierPage.module.scss'
 import PlaysScheduleList from '../PlaysScheduleList'
 import {useSchedule} from '../../hooks/useSchedule'
 import {useTickets} from '../../hooks/useTickets'
-import {playType} from '../../types/playType'
 
 const CashierPage = () => {
   const {getPlays, playsArr} = useSchedule()
   const {getTicket, addTicket, ticket} = useTickets()
 
-  const [plays, setPlays] = useState<playType[]>([])
   const [amountTicketsToAdd, setAmountTicketsToAdd] = useState<number>(0)
 
   useEffect(() => {
     const handleReq = async () => {
       await getPlays('6179295d203312e09fc754a2')
-      setPlays(playsArr)
     }
     handleReq()
   }, [])
@@ -33,7 +30,7 @@ const CashierPage = () => {
 
   return (
       <div className={styles.container}>
-        <PlaysScheduleList plays={plays}/>
+        <PlaysScheduleList plays={playsArr}/>
 
         <h1>{`Tickets: ${ticket}`}</h1>
 
