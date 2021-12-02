@@ -6,7 +6,6 @@ import { useSchedule } from '../../hooks/useSchedule'
 import {playTypeForUpdate} from '../../types/playType'
 import {defaultPlayData} from './initValues'
 import {usePlays} from '../../hooks/usePlays'
-import UpdatePlayPage from '../UpdatePlayPage/UpdatePlayPage'
 
 
 const PlaysListPage: FC<propsTypes> = (props) => {

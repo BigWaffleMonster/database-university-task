@@ -6,6 +6,9 @@ import CashierPage from '../Components/CashierPage'
 import AdminPage from '../Components/AdminPage'
 import PlaysPage from '../Components/PlaysPage'
 import UpdatePlayPage from '../Components/UpdatePlayPage/UpdatePlayPage'
+import CashierListPageFroAdmin from '../Components/CashierListPageForAdmin'
+import SchedulePage from '../Components/SchedulePage'
+import Schedule from '../Components/Schedule'
 
 export const useRoutes = (role?: Roles) => {
   if (role === Roles.CUSTOMER) {
@@ -33,6 +36,9 @@ export const useRoutes = (role?: Roles) => {
         <Route path='/choose_role' element={<ChooseRole />} />
         <Route path='/plays' element={<PlaysPage />} />
         <Route path='/plays/:id' element={<UpdatePlayPage />} />
+        <Route path='/cashiers' element={<CashierListPageFroAdmin />} />
+        <Route path='/schedule/:id' element={<Schedule />} />
+        <Route path='/plays_schedule' element={<SchedulePage />} />
         <Route path='/' element={<Navigate to='/admin' />} />
         <Route path='*' element={<h1>404</h1>} />
       </Routes>

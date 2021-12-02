@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 import { PlaysListDto } from './dto/plays-list.dto'
 import { PlaysList, PlaysListDocument } from './schemas/plays-list.schema'
+import {PlaysListUpdateDto} from './dto/plays-list-update.dto'
 
 @Injectable()
 export class PlaysListService {
@@ -26,5 +27,9 @@ export class PlaysListService {
 
   async remove(id: string) {}
 
-  async update(id: string) {}
+  async update(id: string, playsListUpdateDto: PlaysListUpdateDto) {
+    const response = await this.PlaysList.findOneAndUpdate({_id: id}, {$push: {playsListUpdateDto}})
+
+    return response
+  }
 }

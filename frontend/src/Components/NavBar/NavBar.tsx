@@ -27,7 +27,7 @@ const NavBar: FC = () => {
           }
           {roleStore.role === Roles.ADMIN ?
             <li>
-              <NavLink to='/plays' className={styles.navlink}>
+              <NavLink to='/plays_schedule' className={styles.navlink}>
                 Plays Schedule
               </NavLink>
             </li>
@@ -40,7 +40,7 @@ const NavBar: FC = () => {
           }
           {roleStore.role === Roles.ADMIN ?
             <li>
-              <NavLink to='/plays' className={styles.navlink}>
+              <NavLink to='/cashiers' className={styles.navlink}>
                 Cashiers
               </NavLink>
             </li>
