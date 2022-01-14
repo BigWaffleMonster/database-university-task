@@ -12,7 +12,7 @@ import { TicketWindowModule } from './ticket-window/ticket-window.module'
 
 @Module({
   imports: [
-    // MongooseModule.forRoot('mongodb+srv://waffle:1q2w3e4r@cluster0.l596u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+    // MongooseModule.forRoot('mongodb+srv://_:_@cluster0.l596u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
     MongooseModule.forRoot('mongodb://localhost/theaterTicketOffice', ),
     TheaterLocationModule,
     TheaterModule,
